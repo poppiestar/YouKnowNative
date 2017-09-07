@@ -21,19 +21,19 @@ export type Props = {
 
 const showGame = (stage) => {
     switch (stage) {
-        case Stage.SPLASH:
+        case Stage["SPLASH"]:
             return <VisibleSplash />;
         
-        case Stage.GAME_SETUP:
+        case Stage["GAME_SETUP"]:
             return <VisibleGameSetup />;
         
-        case Stage.GAME_ROUND:
+        case Stage["GAME_ROUND"]:
             return <VisibleGameRound />;
         
-        case Stage.ENTER_SCORE:
+        case Stage["ENTER_SCORE"]:
             return <VisibleEnterScore />;
         
-        case Stage.WINNER:
+        case Stage["WINNER"]:
             return <VisibleWinner />;
 
         default:

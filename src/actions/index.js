@@ -28,7 +28,7 @@ export const startGame = (): ThunkAction =>
         const { players } = getState();
 
         if (players.allIds.length >= 2) {
-            dispatch(setStage(Stage.GAME_ROUND));
+            dispatch(setStage(Stage["GAME_ROUND"]));
         }
     };
 
@@ -47,7 +47,7 @@ export const roundOver = (): ThunkAction =>
         const { players, round } = getState();
 
         if (round.winner >= 0 && players.byId[round.winner]) {
-            dispatch(setStage(Stage.ENTER_SCORE));
+            dispatch(setStage(Stage["ENTER_SCORE"]));
         }
     };
 
@@ -61,9 +61,9 @@ export const nextRound = (): ThunkAction =>
         const winnerScore = reduceScores(scores[round.winner]);
 
         if (winnerScore >= goal) {
-            dispatch(setStage(Stage.WINNER));
+            dispatch(setStage(Stage["WINNER"]));
         } else {
-            dispatch(setStage(Stage.GAME_ROUND));
+            dispatch(setStage(Stage["GAME_ROUND"]));
         }
     };
 

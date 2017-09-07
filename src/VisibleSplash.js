@@ -13,7 +13,7 @@ import Splash from './Splash';
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     moveToSetup: () => {
-        dispatch(setStage(Stage.GAME_SETUP));
+        dispatch(setStage(Stage["GAME_SETUP"]));
     }
 });
 

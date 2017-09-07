@@ -5,7 +5,7 @@ import Stage from '../constants/stages';
 import type { Action, GameState } from '../types';
 
 const initialState = {
-    stage: Stage['SPLASH']
+    stage: Stage["SPLASH"]
 };
 
 const game = (state: GameState = initialState, action: Action): GameState => {
@@ -25,11 +25,11 @@ const game = (state: GameState = initialState, action: Action): GameState => {
 };
 
 const restartGame = (): GameState => ({
-    stage: Stage.GAME_ROUND
+    stage: Stage["GAME_ROUND"]
 });
 
 const resetGame = (): GameState => ({
-    stage: Stage.GAME_SETUP
+    stage: Stage["GAME_SETUP"]
 });
 
 export default game;
