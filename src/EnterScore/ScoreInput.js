@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import { View, Text, TouchableHighlight } from 'react-native';
 
 type ScoreInputPropTypes = {
   name: string,
@@ -45,12 +46,18 @@ class ScoreInput extends Component {
 
   render () {
       return (
-          <div>
-              {this.props.name}
-              <button className="decrement" onClick={this.decrement}>-</button>
-              <span className="count">{this.state.count}</span>
-              <button className="increment" onClick={this.increment}>+</button>
-          </div>
+          <View>
+              <Text>{this.props.name}</Text>
+              <TouchableHighlight
+                  onPress={this.decrement}>
+                  <Text>-</Text>
+              </TouchableHighlight>
+              <Text>{this.state.count}</Text>
+              <TouchableHighlight
+                  onPress={this.increment}>
+                  <Text>+</Text>
+              </TouchableHighlight>
+          </View>
       );
   }
 }

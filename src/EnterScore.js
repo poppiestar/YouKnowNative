@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text, TouchableHighlight } from 'react-native';
 
 import type { Players, Scores } from './types';
 
@@ -40,17 +41,20 @@ const EnterScore = ({ winner, players, scores, nextRound, addScore, subtractScor
     const roundWinner = players[winner];
     
     return (
-        <div>
-            <h1>Enter Score</h1>
-            <p>Winner: { roundWinner.name }</p>
-            <p>Value: { reduceScores(scores[winner]) }</p>
+        <View>
+            <Text>Enter Score</Text>
+            <Text>Winner: { roundWinner.name }</Text>
+            <TouchableHighlight
+                onPress={nextRound}>
+                <Text>Next Round</Text>
+            </TouchableHighlight>
+            <Text>Value: { reduceScores(scores[winner]) }</Text>
             {
                 CARDS.map((card: Card, i: number) =>
                     <ScoreInput key={i} increment={addScore} decrement={subtractScore} value={card.value} name={card.name} />
                 )
             }
-            <button onClick={nextRound}>Next Round</button>
-        </div>
+        </View>
     );
 };
 
