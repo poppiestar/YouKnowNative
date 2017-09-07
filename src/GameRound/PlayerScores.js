@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text } from 'react-native';
 
 import type { Player, Players, Scores } from '../types';
 
@@ -15,19 +16,19 @@ const playersList = (players: { [id: number]: Player }, scores: { [id: number]: 
     Object.keys(players).reduce((list, playerId: number) => {
         const player = players[playerId];
 
-        list[playerId] = <li key={player.id}>
-            <p>{player.name}: {reduceScores(scores[player.id])}</p>
-        </li>;
+        list[playerId] = <View key={player.id}>
+            <Text>{player.name}: {reduceScores(scores[player.id])}</Text>
+        </View>;
 
         return list;
     }, []);
 
 const PlayerScores = ({ players, scores }: PlayerScorePropTypes) =>
-    <div>
-        <h2>Player Scores</h2>
-        <ul>
+    <View>
+        <Text>Player Scores</Text>
+        <View>
             { playersList(players, scores) }
-        </ul>
-    </div>;
+        </View>
+    </View>;
 
 export default PlayerScores;

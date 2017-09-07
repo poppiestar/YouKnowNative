@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text, Picker } from 'react-native';
 
 import type { Players, Player } from '../types';
 
@@ -13,15 +14,17 @@ const playersList = (players: { [id: number]: Player }): Array<any> =>
     Object.keys(players).reduce((list, playerId: number) => {
         const player = players[playerId];
 
-        list[playerId] = <option key={player.id} value={player.id}>{player.name}</option>;
+        list[playerId] = <Picker.Item key={player.id} label={player.name} value={player.id} />;
 
         return list;
     }, []);
 
-const WinnerSelector = ({ players, setWinner }: Props) =>
-    <select onChange={(e: Event & { currentTarget: HTMLSelectElement }) => setWinner(parseInt(e.currentTarget.value, 10))}>
-        <option value="">Who won?</option>
+const WinnerSelector = ({ players, winner, setWinner }: Props) =>
+    <Picker
+        selectedValue={winner}
+        onValueChange={(itemValue) => setWinner(itemValue)}>
+        <Picker.Item label="Who won?" value="" />
         { playersList(players) }
-    </select>;
+    </Picker>;
 
 export default WinnerSelector;

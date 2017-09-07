@@ -4,7 +4,7 @@ import React from 'react';
 
 import VisibleSplash from './VisibleSplash';
 import VisibleGameSetup from './VisibleGameSetup';
-// import VisibleGameRound from './VisibleGameRound';
+import VisibleGameRound from './VisibleGameRound';
 // import VisibleEnterScore from './VisibleEnterScore';
 // import VisibleWinner from './VisibleWinner';
 
@@ -26,9 +26,9 @@ const YouKnow = ({ game }: Props) => {
         case Stage.GAME_SETUP:
             return <VisibleGameSetup />;
         
-        // case Stage.GAME_ROUND:
-        //     return <VisibleGameRound />;
-        // 
+        case Stage.GAME_ROUND:
+            return <VisibleGameRound />;
+        
         // case Stage.ENTER_SCORE:
         //     return <VisibleEnterScore />;
         // 
