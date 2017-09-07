@@ -35,3 +35,4 @@ const resetGame = (): GameState => ({
 export default game;
 
 export const getGame = (state: GameState) => state;
+export const getStage = (state: GameState) => state.stage;

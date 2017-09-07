@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 import VisibleSplash from './VisibleSplash';
 import VisibleGameSetup from './VisibleGameSetup';
@@ -18,8 +19,8 @@ export type Props = {
   game: Game
 };
 
-const YouKnow = ({ game }: Props) => {
-    switch (game.stage) {
+const showGame = (stage) => {
+    switch (stage) {
         case Stage.SPLASH:
             return <VisibleSplash />;
         
@@ -37,7 +38,22 @@ const YouKnow = ({ game }: Props) => {
 
         default:
             return <VisibleSplash />;
-    }
-};
+    };
+}
+
+const YouKnow = ({ stage }: Props) =>
+    <View style={styles.container}>
+        <Text>stage: {stage}</Text>
+        {
+            showGame(stage)
+        }
+    </View>;
 
 export default YouKnow;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 100
+    }
+});
