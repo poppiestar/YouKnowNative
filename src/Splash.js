@@ -11,7 +11,7 @@ const Splash = ({ moveToSetup }: Props) =>
         <Text>You Know</Text>
         <Text>Keep track of your games.</Text>
         <TouchableHighlight
-            onPress={moveToSetup()}>
+            onPress={moveToSetup}>
             <Text>Begin</Text>
         </TouchableHighlight>
     </View>;
