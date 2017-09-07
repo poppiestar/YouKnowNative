@@ -9,6 +9,8 @@ import VisibleGameRound from './VisibleGameRound';
 import VisibleEnterScore from './VisibleEnterScore';
 import VisibleWinner from './VisibleWinner';
 
+import ErrorMessage from './ErrorMessage';
+
 import Stage from './constants/stages';
 
 type Game = {
@@ -41,8 +43,9 @@ const showGame = (stage) => {
     };
 }
 
-const YouKnow = ({ stage }: Props) =>
+const YouKnow = ({ stage, error }: Props) =>
     <View style={styles.container}>
+        { !!error && <ErrorMessage>{error}</ErrorMessage> }
         {
             showGame(stage)
         }

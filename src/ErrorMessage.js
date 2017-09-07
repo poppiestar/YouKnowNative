@@ -1,12 +1,13 @@
 // @flow
 
 import React from 'react';
+import { Text } from 'react-native';
 
 type ErrorMessagePropTypes = {
   message: string
 };
 
-const ErrorMessage = ({ message }: ErrorMessagePropTypes) =>
-    <p className="error">{message}</p>;
+const ErrorMessage = ({ children }: ErrorMessagePropTypes) =>
+    <Text>{children}</Text>;
 
 export default ErrorMessage;

@@ -6,13 +6,12 @@ import type { State } from './types';
 import type { Connector } from 'react-redux';
 import type { Props } from './YouKnow';
 
-import { getGoal, getStage, getPlayers } from './reducers';
+import { getStage, getError } from './reducers';
 import YouKnow from './YouKnow';
 
 const mapStateToProps = (state: State) => ({
-    goal: getGoal(state),
     stage: getStage(state),
-    players: getPlayers(state)
+    error: getError(state)
 });
 
 const VisibleYouKnow: Connector<Props> = connect(
