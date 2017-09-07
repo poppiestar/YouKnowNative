@@ -5,7 +5,7 @@ import Stage from '../constants/stages';
 import type { Action, GameState } from '../types';
 
 const initialState = {
-    stage: Stage.GAME_SETUP
+    stage: Stage.GAME_SPLASH
 };
 
 const game = (state: GameState = initialState, action: Action): GameState => {
