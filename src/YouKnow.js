@@ -43,7 +43,6 @@ const showGame = (stage) => {
 
 const YouKnow = ({ stage }: Props) =>
     <View style={styles.container}>
-        <Text>stage: {stage}</Text>
         {
             showGame(stage)
         }
