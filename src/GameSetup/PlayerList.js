@@ -14,7 +14,7 @@ export type Props = {
 const renderPlayer = (player, removePlayer) =>
     <ListItem key={player.id} style={{ flex: 1}}>
         <Text style={{ flex: 2 }}>{player.name}</Text>
-        <Button transparent style={{flex: 1 }}
+        <Button transparent style={{flex: 1, justifyContent: 'flex-end' }}
             onPress={() => removePlayer(player.id)}>
             <Icon name="ios-trash-outline" />
         </Button>
@@ -22,7 +22,6 @@ const renderPlayer = (player, removePlayer) =>
 
 const PlayerList = ({ players, removePlayer }: Props) =>
     <View>
-        <Text>Players: {Object.keys(players).length}</Text>
         <List>
         {
             Object.keys(players).reduce((list, playerId) => {
