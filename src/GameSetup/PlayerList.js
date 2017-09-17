@@ -11,7 +11,7 @@ export type Props = {
 };
 
 const renderPlayer = (player, removePlayer) =>
-    <View>
+    <View key={player.id}>
         <Text>{player.name}</Text>
         <TouchableHighlight
             onPress={() => removePlayer(player.id)}>
