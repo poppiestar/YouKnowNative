@@ -30,7 +30,7 @@ class NewPlayer extends Component {
   render () {
       return (
         <View style={{ flex: 1 }}>
-            <Item regular style={{ flex: 2 }}>
+            <Item regular style={{ flex: 1 }}>
                 <Input
                     ref={component => this._input = component}
                     placeholder="New Player's Name"
