@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Container, Content } from 'native-base';
 
 import VisibleSplash from './VisibleSplash';
 import VisibleGameSetup from './VisibleGameSetup';
@@ -44,12 +45,12 @@ const showGame = (stage) => {
 }
 
 const YouKnow = ({ stage, error }: Props) =>
-    <View style={styles.container}>
+    <Container>
         { !!error && <ErrorMessage>{error}</ErrorMessage> }
         {
             showGame(stage)
         }
-    </View>;
+    </Container>;
 
 export default YouKnow;
 

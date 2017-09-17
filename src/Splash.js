@@ -1,19 +1,22 @@
 // @flow
 
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { Container, Content, Button, Text, H1 } from 'native-base';
+
 export type Props = {
   moveToSetup: () => void
 };
 
 const Splash = ({ moveToSetup }: Props) =>
-    <View>
-        <Text>You Know</Text>
-        <Text>Keep track of your games.</Text>
-        <TouchableHighlight
-            onPress={moveToSetup}>
-            <Text>Begin</Text>
-        </TouchableHighlight>
-    </View>;
+    <Container>
+        <Content padder>
+            <H1>You Know</H1>
+            <Text>Keep track of your games.</Text>
+            <Button block
+                onPress={moveToSetup}>
+                <Text>Begin</Text>
+            </Button>
+        </Content>
+    </Container>;
 
 export default Splash;

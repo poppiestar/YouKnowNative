@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"lodash.omit": "^4.5.0",
+		"native-base": "^2.3.2",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.1",
 		"react-redux": "^5.0.6",
