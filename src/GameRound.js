@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { Container, Header, Title, Body, Content, Button, Text } from 'native-base';
 
 import type { Scores, Players } from './types';
 
@@ -15,13 +15,21 @@ export type Props = {
 };
 
 const GameRound = ({ players, scores, roundOver }: Props) =>
-    <View>
-        <PlayerScores players={players} scores={scores} />
-        <VisibleWinnerSelector />
-        <TouchableHighlight
-            onPress={roundOver}>
-            <Text>Enter Score</Text>
-        </TouchableHighlight>
-    </View>;
+    <Container>
+        <Header>
+            <Body>
+                <Title>Game Round</Title>
+            </Body>
+        </Header>
+        <Content padder>
+            <PlayerScores players={players} scores={scores} />
+            <VisibleWinnerSelector />
+            <Button
+                block
+                onPress={roundOver}>
+                <Text>Enter Score</Text>
+            </Button>
+        </Content>
+    </Container>;
 
 export default GameRound;

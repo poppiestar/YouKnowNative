@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
+import { H2 } from 'native-base';
 
 import VisiblePlayerList from './VisiblePlayerList';
 import VisibleNewPlayer from './VisibleNewPlayer';
 
 const EnterPlayers = () =>
     <View>
-        <Text>Enter Players</Text>
+        <H2>Enter Players</H2>
         <VisiblePlayerList />
         <VisibleNewPlayer />
     </View>;

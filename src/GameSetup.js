@@ -20,7 +20,8 @@ const GameSetup = ({ startGame }: Props) =>
         <Content padder>
             <SetGoal />
             <EnterPlayers />
-            <Button block
+            <Button
+                block
                 onPress={startGame}>
                 <Text>Start Game</Text>
             </Button>

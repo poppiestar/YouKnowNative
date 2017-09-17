@@ -1,7 +1,8 @@
 // @flow
 
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View } from 'react-native';
+import { Text, Button, List, ListItem, Icon } from 'native-base';
 
 import type { Players } from '../types';
 
@@ -11,17 +12,18 @@ export type Props = {
 };
 
 const renderPlayer = (player, removePlayer) =>
-    <View key={player.id}>
-        <Text>{player.name}</Text>
-        <TouchableHighlight
+    <ListItem key={player.id} style={{ flex: 1}}>
+        <Text style={{ flex: 2 }}>{player.name}</Text>
+        <Button transparent style={{flex: 1 }}
             onPress={() => removePlayer(player.id)}>
-            <Text>Remove</Text>
-        </TouchableHighlight>
-    </View>;
+            <Icon name="ios-trash-outline" />
+        </Button>
+    </ListItem>;
 
 const PlayerList = ({ players, removePlayer }: Props) =>
     <View>
         <Text>Players: {Object.keys(players).length}</Text>
+        <List>
         {
             Object.keys(players).reduce((list, playerId) => {
                 const player = players[playerId];
@@ -31,6 +33,7 @@ const PlayerList = ({ players, removePlayer }: Props) =>
                 return list;
             }, [])
         }
+        </List>
     </View>;
 
 export default PlayerList;

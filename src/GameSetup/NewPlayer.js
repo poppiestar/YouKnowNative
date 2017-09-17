@@ -1,8 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableHighlight } from 'react-native';
-
+import { View, TextInput, TouchableHighlight } from 'react-native';
+import { Text, Button, Item, Input } from 'native-base';
 export type Props = {
   addPlayer: (name: string) => any
 }
@@ -29,16 +29,19 @@ class NewPlayer extends Component {
 
   render () {
       return (
-          <View>
-              <TextInput
-                  ref={component => this._input = component}
-                  placeholder="New Player's Name"
-                  onChangeText={(text) => this.setState({ text }) } />
-              <TouchableHighlight
-                  onPress={this.addPlayer}>
-                  <Text>Add</Text>
-              </TouchableHighlight>
-          </View>
+        <View style={{ flex: 1 }}>
+            <Item regular style={{ flex: 2 }}>
+                <Input
+                    ref={component => this._input = component}
+                    placeholder="New Player's Name"
+                    onChangeText={(text) => this.setState({ text }) } />
+            </Item>
+            <Button
+                style={{ flex: 1 }}
+                onPress={this.addPlayer}>
+                <Text>Add</Text>
+            </Button>
+        </View>
       );
   }
 }
