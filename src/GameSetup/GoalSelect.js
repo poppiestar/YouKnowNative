@@ -1,7 +1,8 @@
 // @flow
 
 import React from 'react';
-import { View, Text, Picker } from 'react-native';
+import { View, Text } from 'react-native';
+import { Button } from 'native-base';
 
 const GOALS: Array<number> = [300, 500, 750, 1000];
 
@@ -10,17 +11,25 @@ export type Props = {
   setGoal: (value: string) => void
 };
 
-const goalsList = (goals): Array<any> =>
-    goals.map((item, i) =>
-        <Picker.Item key={i} label={item.toString()} value={item} />
+const goalsList = (goals, goal, setGoal): Array<any> =>
+    goals.map((value, i) =>
+        <Button
+            style={{ flex: 1 }}
+            key={i}
+            disabled={ goal === value }
+            onPress={() => setGoal(value)}>
+            <Text>{value}</Text>
+        </Button>
     );
 
 const GoalSelect = ({ goal, setGoal }: Props) =>
     <View>
         <Text>Current goal: {goal}</Text>
-        <Picker selectedValue={goal} onValueChange={(itemValue) => setGoal(itemValue)}>
-            { goalsList(GOALS) }
-        </Picker>
+        <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
+        {
+            goalsList(GOALS, goal, setGoal)
+        }
+        </View>
     </View>;
 
 export default GoalSelect;
