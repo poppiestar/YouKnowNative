@@ -1,7 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View } from 'react-native';
+import { Button, Text } from 'native-base';
 
 type ScoreInputPropTypes = {
   name: string,
@@ -45,20 +46,28 @@ class ScoreInput extends Component {
   }
 
   render () {
-      return (
-          <View>
-              <Text>{this.props.name}</Text>
-              <TouchableHighlight
-                  onPress={this.decrement}>
-                  <Text>-</Text>
-              </TouchableHighlight>
-              <Text>{this.state.count}</Text>
-              <TouchableHighlight
-                  onPress={this.increment}>
-                  <Text>+</Text>
-              </TouchableHighlight>
-          </View>
-      );
+    return (
+        <View style={{ flex: 1, flexDirection: "row" }}>
+            <Text
+                style={{ flex: 1 }}>
+                {this.props.name}
+            </Text>
+            <Button
+                style={{ flex: 1 }}
+                onPress={this.decrement}>
+                <Text style={{ textAlign: "center" }}>-</Text>
+            </Button>
+            <Text
+                style={{ flex: 1 }}>
+                {this.state.count}
+            </Text>
+            <Button
+                style={{ flex: 1 }}
+                onPress={this.increment}>
+                <Text style={{ textAlign: "center" }}>+</Text>
+            </Button>
+        </View>
+    );
   }
 }
 
