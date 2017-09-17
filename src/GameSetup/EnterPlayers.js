@@ -10,8 +10,8 @@ import VisibleNewPlayer from './VisibleNewPlayer';
 const EnterPlayers = () =>
     <View>
         <H2>Enter Players</H2>
-        <VisiblePlayerList />
         <VisibleNewPlayer />
+        <VisiblePlayerList />
     </View>;
 
 export default EnterPlayers;
