@@ -14,7 +14,7 @@ export type Props = {
 const goalsList = (goals, goal, setGoal): Array<any> =>
     goals.map((value, i) =>
         <Button
-            style={{ flex: 1 }}
+            style={{ paddingLeft: 20, paddingRight: 20 }}
             key={i}
             disabled={ goal === value }
             onPress={() => setGoal(value)}>
