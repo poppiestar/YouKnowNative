@@ -1,8 +1,8 @@
 // @flow
 
-import Stage from '../constants/stages';
+import Stage from '@lib/constants/stages';
 
-import type { Action, GameState } from '../../types';
+import type { Action, GameState } from '@lib/types';
 
 const initialState = {
     stage: Stage["SPLASH"]

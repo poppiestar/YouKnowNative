@@ -4,7 +4,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { Text, Button, List, ListItem, Icon } from 'native-base';
 
-import type { Props } from '../../containers/player-list.container';
+import type { Props } from '@containers/player-list.container';
 
 const renderPlayer = (player, removePlayer) =>
     <ListItem key={player.id} style={{ flex: 1 }}>

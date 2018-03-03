@@ -1,6 +1,6 @@
 // @flow
 
-import type { Action, RoundState } from '../../types';
+import type { Action, RoundState } from '@lib/types';
 
 const initialState = {
     score: 0,

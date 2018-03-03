@@ -3,10 +3,10 @@
 import React from 'react';
 import { Container, Header, Title, Body, Content, Button, Text } from 'native-base';
 
-import type { Props } from '../../containers/game-round.container';
+import type { Props } from '@containers/game-round.container';
 
-import PlayerScores from '../organisms/player-scores';
-import WinnerSelectorContainer from '../../containers/winner-selector.container';
+import PlayerScores from '@components/organisms/player-scores';
+import WinnerSelectorContainer from '@containers/winner-selector.container';
 
 const GameRoundScreen = ({ players, scores, roundOver }: Props) =>
     <Container>

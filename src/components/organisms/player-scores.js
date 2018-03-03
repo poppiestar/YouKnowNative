@@ -4,9 +4,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { H1, Text, List, ListItem } from 'native-base';
 
-import type { Player, Players, Scores } from '../../types';
+import type { Player, Players, Scores } from '@lib/types';
 
-import { reduceScores } from '../../redux/helpers';
+import { reduceScores } from '@lib/helpers';
 
 type PlayerScorePropTypes = {
     players: Players,

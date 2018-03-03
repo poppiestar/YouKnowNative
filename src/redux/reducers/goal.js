@@ -1,6 +1,6 @@
 // @flow
 
-import type { Action, GoalState } from '../../types';
+import type { Action, GoalState } from '@lib/types';
 
 const initialState = 300;
 

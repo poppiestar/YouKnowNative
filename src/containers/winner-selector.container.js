@@ -2,13 +2,13 @@
 
 import { connect } from 'react-redux';
 
-import type { State, Player, Players } from '../types';
+import type { State, Player, Players } from '@lib/types';
 import type { Connector } from 'react-redux';
 
-import { getPlayers, getWinner } from '../redux/reducers';
-import { setWinner } from '../redux/actions';
+import { getPlayers, getWinner } from '@redux/reducers';
+import { setWinner } from '@redux/actions';
 
-import WinnerSelector from '../components/organisms/winner-selector';
+import WinnerSelector from '@components/organisms/winner-selector';
 
 type ConnectedState = {
     players: Players,

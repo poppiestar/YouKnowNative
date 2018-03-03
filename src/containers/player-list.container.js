@@ -2,13 +2,13 @@
 
 import { connect } from 'react-redux';
 
-import type { State, Players } from '../types';
+import type { State, Players } from '@lib/types';
 import type { Connector } from 'react-redux';
 
-import { getPlayers } from '../redux/reducers';
-import { removePlayer } from '../redux/actions';
+import { getPlayers } from '@redux/reducers';
+import { removePlayer } from '@redux/actions';
 
-import PlayerList from '../components/molecules/player-list';
+import PlayerList from '@components/molecules/player-list';
 
 type ConnectedState = {
     players: Players,

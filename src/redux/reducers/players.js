@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 import omit from 'lodash.omit';
-import type { AllPlayerIdsState, PlayersByIdState, Action, PlayersState, Players } from '../../types';
+import type { AllPlayerIdsState, PlayersByIdState, Action, PlayersState, Players } from '@lib/types';
 
 const initialState = [];
 

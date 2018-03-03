@@ -3,7 +3,7 @@
 import score from './score';
 import omit from 'lodash.omit';
 
-import type { Action, PlayerScoresState } from '../../types';
+import type { Action, PlayerScoresState } from '@lib/types';
 
 const initialState = {};
 

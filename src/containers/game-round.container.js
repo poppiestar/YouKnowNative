@@ -2,13 +2,13 @@
 
 import { connect } from 'react-redux';
 
-import type { State, Scores, Players } from '../types';
+import type { State, Scores, Players } from '@lib/types';
 import type { Connector } from 'react-redux';
 
-import { getPlayers, getScores } from '../redux/reducers';
-import { roundOver } from '../redux/actions';
+import { getPlayers, getScores } from '@redux/reducers';
+import { roundOver } from '@redux/actions';
 
-import GameRoundScreen from '../components/screens/game-round.screen';
+import GameRoundScreen from '@components/screens/game-round.screen';
 
 type ConnectedState = {
     players: Players,

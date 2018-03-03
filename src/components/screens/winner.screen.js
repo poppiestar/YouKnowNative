@@ -3,9 +3,9 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 
-import type { Props } from '../../containers/winner.container';
+import type { Props } from '@containers/winner.container';
 
-import { reduceScores } from '../../redux/helpers';
+import { reduceScores } from '@lib/helpers';
 
 const WinnerScreen = ({ winner, players, scores, restartGame, resetGame }: Props) => {
     const { name } = players[winner];

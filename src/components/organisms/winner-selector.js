@@ -3,8 +3,8 @@
 import React from 'react';
 import { View, Text, Picker } from 'react-native';
 
-import type { Players } from '../../types';
-import type { Props } from '../../containers/winner-selector.container';
+import type { Players } from '@lib/types';
+import type { Props } from '@containers/winner-selector.container';
 
 const playersList = (players: Players): Array<any> =>
     Object.keys(players).reduce((list, playerId) => {

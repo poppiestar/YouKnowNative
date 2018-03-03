@@ -2,12 +2,12 @@
 
 import { connect } from 'react-redux';
 
-import type { State } from '../types';
+import type { State } from '@lib/types';
 import type { Connector } from 'react-redux';
 
-import { setGoal } from '../redux/actions';
+import { setGoal } from '@redux/actions';
 
-import GoalSelect from '../components/molecules/goal-select';
+import GoalSelect from '@components/molecules/goal-select';
 
 type ConnectedState = {
     goal: number,

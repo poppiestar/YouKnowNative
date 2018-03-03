@@ -4,15 +4,15 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Container, Content } from 'native-base';
 
-import type { Props } from '../../containers/you-know.container';
+import type { Props } from '@containers/you-know.container';
 
-import SplashContainer from '../../containers/splash.container';
-import GameSetupContainer from '../../containers/game-setup.container';
-import GameRoundContainer from '../../containers/game-round.container';
-import EnterScoreContainer from '../../containers/enter-score.container';
-import WinnerContainer from '../../containers/winner.container';
+import SplashContainer from '@containers/splash.container';
+import GameSetupContainer from '@containers/game-setup.container';
+import GameRoundContainer from '@containers/game-round.container';
+import EnterScoreContainer from '@containers/enter-score.container';
+import WinnerContainer from '@containers/winner.container';
 
-import Stage from '../../redux/constants/stages';
+import Stage from '@lib/constants/stages';
 
 const showGame = (stage) => {
     switch (stage) {

@@ -1,9 +1,9 @@
 // @flow
 
-import Stage from '../constants/stages';
-import { reduceScores } from '../helpers';
+import Stage from '@lib/constants/stages';
+import { reduceScores } from '@lib/helpers';
 
-import type { Action, Dispatch, GetState, ThunkAction } from '../../types';
+import type { Action, Dispatch, GetState, ThunkAction } from '@lib/types';
 
 let playerId = 1;
 

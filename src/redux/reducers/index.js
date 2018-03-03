@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 
-import type { State } from '../../types';
+import type { State } from '@lib/types';
 
 import players, * as fromPlayers from './players';
 import goal, * as fromGoal from './goal';

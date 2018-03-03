@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import type { Dispatch } from 'redux';
 import type { Connector } from 'react-redux';
 
-import { setupGame } from '../redux/actions';
+import { setupGame } from '@redux/actions';
 
-import Stage from '../redux/constants/stages';
+import Stage from '@lib/constants/stages';
 
-import SplashScreen from '../components/screens/splash.screen';
+import SplashScreen from '@components/screens/splash.screen';
 
 type ConnectedDispatch = {
     setupGame: () => void
