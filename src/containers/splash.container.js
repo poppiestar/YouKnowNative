@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { Dispatch } from 'redux';
@@ -21,7 +19,7 @@ const mapDispatchToProps = {
     setupGame
 };
 
-const SplashContainer: Connector<{}, ConnectedDispatch> = connect(
+const SplashContainer: Connector<{}, Props> = connect(
     null,
     mapDispatchToProps
 )(SplashScreen);

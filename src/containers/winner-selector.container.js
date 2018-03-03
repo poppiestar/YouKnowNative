@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { State, Player, Players } from '@lib/types';
@@ -30,7 +28,7 @@ const mapDispatchToProps = {
     setWinner
 };
 
-const WinnerSelectorContainer: Connector<ConnectedState, ConnectedDispatch> = connect(
+const WinnerSelectorContainer: Connector<{}, Props> = connect(
     mapStateToProps,
     mapDispatchToProps
 )(WinnerSelector);

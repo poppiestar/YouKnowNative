@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { State, Scores, Players } from '@lib/types';
@@ -30,7 +28,7 @@ const mapDispatchToProps = {
     roundOver
 };
 
-const GameRoundContainer: Connector<ConnectedState, ConnectedDispatch> = connect(
+const GameRoundContainer: Connector<{}, Props> = connect(
     mapStateToProps,
     mapDispatchToProps
 )(GameRoundScreen);

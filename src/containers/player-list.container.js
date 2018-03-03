@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { State, Players } from '@lib/types';
@@ -28,7 +26,7 @@ const mapDispatchToProps = {
     removePlayer
 };
 
-const PlayerListContainer: Connector<ConnectedState, ConnectedDispatch> = connect(
+const PlayerListContainer: Connector<{}, Props> = connect(
     mapStateToProps,
     mapDispatchToProps
 )(PlayerList);

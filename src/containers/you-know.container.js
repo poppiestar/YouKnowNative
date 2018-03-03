@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { State } from '@lib/types';
@@ -19,7 +17,7 @@ const mapStateToProps = (state: State) => ({
     stage: getStage(state),
 });
 
-const YouKnowContainer: Connector<{}, Props> = connect(
+const YouKnowContainer = connect(
     mapStateToProps
 )(YouKnowScreen);
 

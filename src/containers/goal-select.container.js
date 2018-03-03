@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { State } from '@lib/types';
@@ -27,7 +25,7 @@ const mapDispatchToProps = {
     setGoal
 };
 
-const GoalSelectContainer: Connector<ConnectedState, ConnectedDispatch> = connect(
+const GoalSelectContainer: Connector<{}, Props> = connect(
     mapStateToProps,
     mapDispatchToProps
 )(GoalSelect);

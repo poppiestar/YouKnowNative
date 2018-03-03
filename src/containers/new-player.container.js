@@ -1,5 +1,3 @@
-// @flow
-
 import { connect } from 'react-redux';
 
 import type { Connector } from 'react-redux';
@@ -18,7 +16,7 @@ const mapDispatchToProps = {
     addPlayer
 };
 
-const NewPlayerContainer: Connector<{}, ConnectedDispatch> = connect(
+const NewPlayerContainer: Connector<{}, Props> = connect(
     null,
     mapDispatchToProps
 )(NewPlayer);
