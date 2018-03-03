@@ -16,10 +16,13 @@ class NewPlayer extends Component<Props, State> {
     _input: TextInput; // TODO figure this out!
     addPlayer: () => void;
 
+    state: State = {
+        text: ''
+    };
+
     constructor(props: Props): void {
         super(props);
 
-        this.state = { text: '' };
         this.addPlayer = this.addPlayer.bind(this);
     }
 
