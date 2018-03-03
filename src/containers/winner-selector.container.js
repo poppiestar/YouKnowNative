@@ -30,9 +30,10 @@ const mapDispatchToProps = {
     setWinner
 };
 
-const connector: Connector<ConnectedState, ConnectedDispatch> = connect(
+const WinnerSelectorContainer: Connector<ConnectedState, ConnectedDispatch> = connect(
     mapStateToProps,
     mapDispatchToProps
-);
+)(WinnerSelector);
 
-export default connector(WinnerSelector);
+
+export default WinnerSelectorContainer;
