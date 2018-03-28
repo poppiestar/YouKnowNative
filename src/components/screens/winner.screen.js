@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 
-import type { Props } from '@containers/winner.container';
+import type { Props } from './winner.container';
 
 import { reduceScores } from '@lib/helpers';
 

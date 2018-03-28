@@ -23,7 +23,7 @@ export type PlayersByIdState = {
     [id: number]: Player
 };
 
-export type AllPlayerIdsState = Array<number>;
+export type AllPlayerIdsState = number[];
 
 export type PlayerScoresState = { [id: number]: Array<number> };
 

@@ -3,11 +3,11 @@
 import React from 'react';
 import { Container, Header, Body, Title, Content, Text, Button } from 'native-base';
 
-import type { Props } from '@containers/enter-score.container';
+import type { Props } from './enter-score.container';
 
 import { reduceScores } from '@lib/helpers';
 
-import ScoreInputContainer from '@containers/score-input.container';
+import ScoreInputContainer from '../molecules/score-input.container';
 
 type Card = {
     value: number,

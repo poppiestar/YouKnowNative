@@ -5,7 +5,7 @@ import type { Connector } from 'react-redux';
 
 import { setGoal } from '@redux/actions';
 
-import GoalSelect from '@components/molecules/goal-select';
+import GoalSelect from './goal-select';
 
 type ConnectedState = {
     goal: number,

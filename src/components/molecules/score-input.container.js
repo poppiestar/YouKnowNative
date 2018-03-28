@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import ScoreInput from '@components/molecules/score-input';
+import ScoreInput from './score-input';
 
 type Props = {
     name: string,

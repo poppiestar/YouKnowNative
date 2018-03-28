@@ -1,3 +1,5 @@
+// @flow
+
 import { connect } from 'react-redux';
 
 import type { State } from '@lib/types';
@@ -5,15 +7,15 @@ import type { Connector } from 'react-redux';
 
 import { getStage } from '@redux/reducers';
 
-import YouKnowScreen from '@components/screens/you-know.screen';
+import YouKnowScreen from './you-know.screen';
 
 type ConnectedState = {
-    stage: number
+    stage: number;
 }
 
 export type Props = ConnectedState;
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): ConnectedState => ({
     stage: getStage(state),
 });
 

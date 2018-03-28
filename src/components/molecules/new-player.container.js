@@ -4,7 +4,7 @@ import type { Connector } from 'react-redux';
 
 import { addPlayer } from '@redux/actions';
 
-import NewPlayer from '@components/molecules/new-player';
+import NewPlayer from './new-player';
 
 type ConnectedDispatch = {
     addPlayer: (name: string) => void

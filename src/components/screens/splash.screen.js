@@ -3,7 +3,7 @@
 import React from 'react';
 import { Container, Content, Button, Text, H1 } from 'native-base';
 
-import type { Props } from '@containers/splash.container';
+import type { Props } from './splash.container';
 
 const SplashScreen = ({ setupGame }: Props) =>
     <Container>

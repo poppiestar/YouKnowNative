@@ -1,21 +1,24 @@
+// @flow
+
 import { connect } from 'react-redux';
 
 import type { Dispatch } from 'redux';
 import type { Connector } from 'react-redux';
+import type { ThunkAction } from '@lib/types';
 
 import { setupGame } from '@redux/actions';
 
 import Stage from '@lib/constants/stages';
 
-import SplashScreen from '@components/screens/splash.screen';
+import SplashScreen from './splash.screen';
 
 type ConnectedDispatch = {
-    setupGame: () => void
+    setupGame: () => ThunkAction
 };
 
 export type Props = ConnectedDispatch;
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     setupGame
 };
 

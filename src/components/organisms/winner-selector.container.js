@@ -1,12 +1,14 @@
+// @flow
+
 import { connect } from 'react-redux';
 
-import type { State, Player, Players } from '@lib/types';
 import type { Connector } from 'react-redux';
+import type { Action, State, Player, Players } from '@lib/types';
 
 import { getPlayers, getWinner } from '@redux/reducers';
 import { setWinner } from '@redux/actions';
 
-import WinnerSelector from '@components/organisms/winner-selector';
+import WinnerSelector from './winner-selector';
 
 type ConnectedState = {
     players: Players,
@@ -14,17 +16,17 @@ type ConnectedState = {
 }
 
 type ConnectedDispatch = {
-    setWinner: (value: number) => void
+    setWinner: (value: number) => Action
 }
 
 export type Props = ConnectedState & ConnectedDispatch;
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): ConnectedState => ({
     players: getPlayers(state),
     winner: getWinner(state)
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     setWinner
 };
 

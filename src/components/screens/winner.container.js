@@ -1,12 +1,14 @@
+// @flow
+
 import { connect } from 'react-redux';
 
-import type { Scores, State, Player } from '@lib/types';
 import type { Connector } from 'react-redux';
+import type { Action, Scores, State, Player } from '@lib/types';
 
 import { getWinner, getPlayers, getScores } from '@redux/reducers';
 import { restartGame, resetGame } from '@redux/actions';
 
-import WinnerScreen from '@components/screens/winner.screen';
+import WinnerScreen from './winner.screen';
 
 type ConnectedState = {
     players: Array<Player>,
@@ -15,19 +17,19 @@ type ConnectedState = {
 }
 
 type ConnectedDispatch = {
-    restartGame: () => void,
-    resetGame: () => void
+    restartGame: () => Action,
+    resetGame: () => Action
 }
 
 export type Props = ConnectedState & ConnectedDispatch;
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): ConnectedState => ({
     players: getPlayers(state),
     scores: getScores(state),
     winner: getWinner(state)
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     restartGame,
     resetGame
 };

@@ -2,13 +2,14 @@
 
 import { combineReducers } from 'redux';
 import omit from 'lodash.omit';
+
 import type { AllPlayerIdsState, PlayersByIdState, Action, PlayersState, Players } from '@lib/types';
 
 const initialState = [];
 
 // TODO add missing Action, but it throws an error now for some reason!
 
-const allIds = (state: AllPlayerIdsState = initialState, action): AllPlayerIdsState => {
+const allIds = (state: AllPlayerIdsState = initialState, action: Action): AllPlayerIdsState => {
     switch (action.type) {
         case 'PLAYERS:ADD':
             return [...state, action.id];

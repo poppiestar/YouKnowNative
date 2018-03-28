@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Button } from 'native-base';
 
-import type { Props } from '@containers/goal-select.container';
+import type { Props } from './goal-select.container';
 
 const GOALS: Array<number> = [300, 500, 750, 1000];
 

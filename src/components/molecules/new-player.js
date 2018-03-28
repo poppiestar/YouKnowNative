@@ -5,7 +5,7 @@ import { View, TouchableHighlight } from 'react-native';
 import { Text, Button, Item, Input } from 'native-base';
 
 import type { TextInput } from "react-native";
-import type { Props } from '@containers/new-player.container';
+import type { Props } from './new-player.container';
 
 type State = {
     text: string;

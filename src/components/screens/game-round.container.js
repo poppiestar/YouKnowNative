@@ -1,12 +1,15 @@
+// @flow
+
 import { connect } from 'react-redux';
 
 import type { State, Scores, Players } from '@lib/types';
 import type { Connector } from 'react-redux';
+import type { ThunkAction } from '@lib/types';
 
 import { getPlayers, getScores } from '@redux/reducers';
 import { roundOver } from '@redux/actions';
 
-import GameRoundScreen from '@components/screens/game-round.screen';
+import GameRoundScreen from './game-round.screen';
 
 type ConnectedState = {
     players: Players,
@@ -14,17 +17,17 @@ type ConnectedState = {
 }
 
 type ConnectedDispatch = {
-    roundOver: () => void
+    roundOver: () => ThunkAction
 }
 
 export type Props = ConnectedState & ConnectedDispatch;
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): ConnectedState => ({
     scores: getScores(state),
     players: getPlayers(state)
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     roundOver
 };
 

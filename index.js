@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import YouKnowContainer from './src/containers/you-know.container';
+import YouKnowContainer from './src/components/screens/you-know.container';
 import YouKnowStore from './src/redux/reducers';
 
 let store = createStore(

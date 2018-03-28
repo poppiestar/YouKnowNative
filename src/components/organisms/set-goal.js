@@ -4,7 +4,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { H2 } from 'native-base';
 
-import GoalSelectContainer from '@containers/goal-select.container';
+import GoalSelectContainer from '@components/molecules/goal-select.container';
 
 const SetGoal = () =>
     <View>
