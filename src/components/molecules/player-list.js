@@ -1,16 +1,17 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import { Text, Button, List, ListItem, Icon } from 'native-base';
 
 import type { Props } from './player-list.container';
 
-const renderPlayer = (player, removePlayer) =>
+const renderPlayer = (player, removePlayer): React.Node =>
     <ListItem key={player.id} style={{ flex: 1 }}>
         <Text style={{ flex: 2 }}>{player.name}</Text>
         <Button transparent style={{ flex: 1, justifyContent: 'flex-end' }}
-            onPress={() => removePlayer(player.id)}>
+            onPress={() => removePlayer(player.id)}
+        >
             <Icon name="ios-trash-outline" />
         </Button>
     </ListItem>;

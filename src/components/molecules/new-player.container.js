@@ -1,7 +1,9 @@
 // @flow
 
+import React, { Component } from "react";
 import { connect } from 'react-redux';
 
+import type { TextInput } from "react-native";
 import type { Action } from "@lib/types";
 
 import { addPlayer } from '@redux/actions';
@@ -14,13 +16,50 @@ type ConnectedDispatch = {
 
 export type Props = ConnectedDispatch;
 
+type State = {
+    text: string;
+}
+
+class NewPlayerContainer extends Component<Props, State> {
+    _input: TextInput; // TODO figure this out!
+
+    addPlayer: () => void;
+
+    state: State = {
+        text: ''
+    };
+
+    constructor(props: Props): void {
+        super(props);
+
+        this.addPlayer = this.addPlayer.bind(this);
+    }
+
+    addPlayer(): void {
+        const name = this.state.text;
+
+        if (name !== '') {
+            this.props.addPlayer(name);
+            this._input.setNativeProps({ value: '' });
+            this.setState({ text: '' });
+        }
+    }
+
+    render() {
+        return (
+            <NewPlayer
+                addPlayer={this.addPlayer}
+                onChangeText={(text: string) => this.setState({ text })}
+            />
+        );
+    }
+}
+
 const mapDispatchToProps: ConnectedDispatch = {
     addPlayer
 };
 
-const NewPlayerContainer = connect(
+export default connect(
     null,
     mapDispatchToProps
-)(NewPlayer);
-
-export default NewPlayerContainer;
+)(NewPlayerContainer);

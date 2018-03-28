@@ -2,8 +2,7 @@
 
 import { connect } from 'react-redux';
 
-import type { Connector } from 'react-redux';
-import type { Action, Scores, State, Player } from '@lib/types';
+import type { Action, Scores, State, Player, PlayersByIdState } from '@lib/types';
 
 import { getWinner, getPlayers, getScores } from '@redux/reducers';
 import { restartGame, resetGame } from '@redux/actions';
@@ -11,7 +10,7 @@ import { restartGame, resetGame } from '@redux/actions';
 import WinnerScreen from './winner.screen';
 
 type ConnectedState = {
-    players: Array<Player>,
+    players: PlayersByIdState,
     scores: Scores,
     winner: number,
 }
@@ -34,7 +33,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     resetGame
 };
 
-const WinnerContainer: Connector<{}, Props> = connect(
+const WinnerContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(WinnerScreen);

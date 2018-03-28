@@ -2,12 +2,14 @@
 
 import React, { Component } from 'react';
 
+import type { Action } from "@lib/types";
+
 import ScoreInput from './score-input';
 
 type Props = {
     name: string,
-    increment: (num: number) => void,
-    decrement: (num: number) => void,
+    increment: (num: number) => Action,
+    decrement: (num: number) => Action,
     value: number
 };
 

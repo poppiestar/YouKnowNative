@@ -1,12 +1,12 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { View, Text, Picker } from 'react-native';
 
 import type { Players } from '@lib/types';
 import type { Props } from './winner-selector.container';
 
-const playersList = (players: Players): Array<any> =>
+const playersList = (players: Players): React.Node[] =>
     Object.keys(players).reduce((list, playerId) => {
         const player = players[parseInt(playerId, 10)];
 

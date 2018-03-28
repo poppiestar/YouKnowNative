@@ -9,7 +9,7 @@ const initialState: AllPlayerIdsState = [];
 
 // TODO add missing Action, but it throws an error now for some reason!
 
-const allIds = (state: AllPlayerIdsState = initialState, action: Action): AllPlayerIdsState => {
+const allIds = (state: AllPlayerIdsState = initialState, action): AllPlayerIdsState => {
     switch (action.type) {
         case 'PLAYERS:ADD':
             return [...state, action.id];

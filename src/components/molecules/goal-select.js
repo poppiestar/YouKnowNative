@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { View, Text } from 'react-native';
 import { Button } from 'native-base';
 
@@ -8,7 +8,7 @@ import type { Props } from './goal-select.container';
 
 const GOALS: number[] = [300, 500, 750, 1000];
 
-const goalsList = (goals, goal, setGoal): any[] =>
+const goalsList = (goals, goal, setGoal): React.Node[] =>
     goals.map((value, i) =>
         <Button
             style={{ paddingLeft: 20, paddingRight: 20 }}

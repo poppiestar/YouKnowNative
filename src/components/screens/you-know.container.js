@@ -3,7 +3,6 @@
 import { connect } from 'react-redux';
 
 import type { State } from '@lib/types';
-import type { Connector } from 'react-redux';
 
 import { getStage } from '@redux/reducers';
 

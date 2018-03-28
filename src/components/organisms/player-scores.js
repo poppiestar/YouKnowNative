@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import { H1, Text, List, ListItem } from 'native-base';
 
@@ -13,7 +13,7 @@ type PlayerScorePropTypes = {
     scores: Scores
 };
 
-const playersList = (players: Players, scores: Scores): any[] =>
+const playersList = (players: Players, scores: Scores): React.Node[] =>
     Object.keys(players).reduce((list, playerId) => {
         const player = players[parseInt(playerId, 10)];
 

@@ -3,7 +3,6 @@
 import { connect } from 'react-redux';
 
 import type { Dispatch } from 'redux';
-import type { Connector } from 'react-redux';
 import type { ThunkAction } from '@lib/types';
 
 import { setupGame } from '@redux/actions';
@@ -22,7 +21,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     setupGame
 };
 
-const SplashContainer: Connector<{}, Props> = connect(
+const SplashContainer = connect(
     null,
     mapDispatchToProps
 )(SplashScreen);
