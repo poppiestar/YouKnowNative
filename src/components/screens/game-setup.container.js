@@ -2,7 +2,6 @@
 
 import { connect } from 'react-redux';
 
-import type { Connector } from 'react-redux';
 import type { ThunkAction } from '@lib/types';
 
 import { startGame } from '@redux/actions';
@@ -19,7 +18,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     startGame
 };
 
-const GameSetupContainer: Connector<{}, Props> = connect(
+const GameSetupContainer = connect(
     null,
     mapDispatchToProps
 )(GameSetupScreen);

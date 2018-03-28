@@ -6,7 +6,8 @@ export type Player = {
 };
 
 export type Players = PlayersByIdState;
-export type Scores = { [id: number]: Array<number> };
+export type ScoreList = number[];
+export type Scores = { [id: number]: ScoreList };
 
 export type GameState = {
     stage: number
@@ -25,7 +26,7 @@ export type PlayersByIdState = {
 
 export type AllPlayerIdsState = number[];
 
-export type PlayerScoresState = { [id: number]: Array<number> };
+export type PlayerScoresState = { [id: number]: ScoreList };
 
 export type PlayerState = {
     id: string,

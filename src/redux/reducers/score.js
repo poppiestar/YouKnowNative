@@ -1,5 +1,10 @@
+// @flow
 
-const score = (state = [0], action) => {
+import type { Action, ScoreList } from "@lib/types";
+
+const initialState: ScoreList = [];
+
+const score = (state: ScoreList = [0], action: Action) => {
     switch (action.type) {
         case 'PLAYERS:ADD':
         case 'GAME:RESTART':

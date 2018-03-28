@@ -1,7 +1,8 @@
+// @flow
+
 import { connect } from 'react-redux';
 
-import type { State } from '@lib/types';
-import type { Connector } from 'react-redux';
+import type { Action, State } from '@lib/types';
 
 import { setGoal } from '@redux/actions';
 
@@ -12,20 +13,20 @@ type ConnectedState = {
 }
 
 type ConnectedDispatch = {
-    setGoal: (value: number) => void
+    setGoal: (value: number) => Action
 }
 
 export type Props = ConnectedState & ConnectedDispatch;
 
-const mapStateToProps = ({ goal }: State) => ({
+const mapStateToProps = ({ goal }: State): ConnectedState => ({
     goal
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     setGoal
 };
 
-const GoalSelectContainer: Connector<{}, Props> = connect(
+const GoalSelectContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(GoalSelect);

@@ -5,7 +5,7 @@ import omit from 'lodash.omit';
 
 import type { Action, PlayerScoresState } from '@lib/types';
 
-const initialState = {};
+const initialState: PlayerScoresState = {};
 
 const scores = (state: PlayerScoresState = initialState, action: Action) => {
     switch (action.type) {

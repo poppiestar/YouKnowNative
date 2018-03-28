@@ -3,7 +3,6 @@
 import { connect } from 'react-redux';
 
 import type { State, Players, Scores } from '@lib/types';
-import type { Connector } from 'react-redux';
 import type { Action, ThunkAction } from '@lib/types';
 
 import { addScore, subtractScore, nextRound } from '@redux/actions';
@@ -36,7 +35,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     subtractScore,
     nextRound
 };
-const EnterScoreContainer: Connector<{}, Props> = connect(
+const EnterScoreContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(EnterScoreScreen);

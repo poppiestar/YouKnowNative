@@ -13,7 +13,7 @@ type PlayerScorePropTypes = {
     scores: Scores
 };
 
-const playersList = (players: Players, scores: Scores): Array<any> =>
+const playersList = (players: Players, scores: Scores): any[] =>
     Object.keys(players).reduce((list, playerId) => {
         const player = players[parseInt(playerId, 10)];
 

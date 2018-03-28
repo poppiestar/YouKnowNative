@@ -5,7 +5,7 @@ import omit from 'lodash.omit';
 
 import type { AllPlayerIdsState, PlayersByIdState, Action, PlayersState, Players } from '@lib/types';
 
-const initialState = [];
+const initialState: AllPlayerIdsState = [];
 
 // TODO add missing Action, but it throws an error now for some reason!
 

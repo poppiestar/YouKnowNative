@@ -2,7 +2,7 @@
 
 import type { Action, GoalState } from '@lib/types';
 
-const initialState = 300;
+const initialState: GoalState = 300;
 
 const goalOptions = (state: GoalState = initialState, action: Action): number => {
     switch (action.type) {

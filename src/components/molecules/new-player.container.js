@@ -1,22 +1,24 @@
+// @flow
+
 import { connect } from 'react-redux';
 
-import type { Connector } from 'react-redux';
+import type { Action } from "@lib/types";
 
 import { addPlayer } from '@redux/actions';
 
 import NewPlayer from './new-player';
 
 type ConnectedDispatch = {
-    addPlayer: (name: string) => void
+    addPlayer: (name: string) => Action
 }
 
 export type Props = ConnectedDispatch;
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     addPlayer
 };
 
-const NewPlayerContainer: Connector<{}, Props> = connect(
+const NewPlayerContainer = connect(
     null,
     mapDispatchToProps
 )(NewPlayer);

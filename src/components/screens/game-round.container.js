@@ -3,7 +3,6 @@
 import { connect } from 'react-redux';
 
 import type { State, Scores, Players } from '@lib/types';
-import type { Connector } from 'react-redux';
 import type { ThunkAction } from '@lib/types';
 
 import { getPlayers, getScores } from '@redux/reducers';
@@ -31,7 +30,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     roundOver
 };
 
-const GameRoundContainer: Connector<{}, Props> = connect(
+const GameRoundContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(GameRoundScreen);

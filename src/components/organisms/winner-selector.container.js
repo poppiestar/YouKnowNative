@@ -2,7 +2,6 @@
 
 import { connect } from 'react-redux';
 
-import type { Connector } from 'react-redux';
 import type { Action, State, Player, Players } from '@lib/types';
 
 import { getPlayers, getWinner } from '@redux/reducers';
@@ -12,7 +11,7 @@ import WinnerSelector from './winner-selector';
 
 type ConnectedState = {
     players: Players,
-    winner: Player
+    winner: number
 }
 
 type ConnectedDispatch = {
@@ -30,7 +29,7 @@ const mapDispatchToProps: ConnectedDispatch = {
     setWinner
 };
 
-const WinnerSelectorContainer: Connector<{}, Props> = connect(
+const WinnerSelectorContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(WinnerSelector);

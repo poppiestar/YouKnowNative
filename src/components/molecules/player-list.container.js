@@ -1,7 +1,8 @@
+// @flow
+
 import { connect } from 'react-redux';
 
-import type { State, Players } from '@lib/types';
-import type { Connector } from 'react-redux';
+import type { Action, State, Players } from '@lib/types';
 
 import { getPlayers } from '@redux/reducers';
 import { removePlayer } from '@redux/actions';
@@ -13,20 +14,20 @@ type ConnectedState = {
 };
 
 type ConnectedDispatch = {
-    removePlayer: (id: number) => void
+    removePlayer: (id: number) => Action
 };
 
 export type Props = ConnectedState & ConnectedDispatch;
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State): ConnectedState => ({
     players: getPlayers(state)
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps: ConnectedDispatch = {
     removePlayer
 };
 
-const PlayerListContainer: Connector<{}, Props> = connect(
+const PlayerListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(PlayerList);

@@ -2,7 +2,7 @@
 
 import type { Action, RoundState } from '@lib/types';
 
-const initialState = {
+const initialState: RoundState = {
     score: 0,
     winner: -1
 };

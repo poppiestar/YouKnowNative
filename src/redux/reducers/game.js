@@ -4,7 +4,7 @@ import Stage from '@lib/constants/stages';
 
 import type { Action, GameState } from '@lib/types';
 
-const initialState = {
+const initialState: GameState = {
     stage: Stage["SPLASH"]
 };
 
