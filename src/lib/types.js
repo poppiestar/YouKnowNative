@@ -54,9 +54,11 @@ export type Action =
     | { type: 'GAME:SET_STAGE', stage: number }
     | { type: 'GAME:RESTART' }
     | { type: 'GAME:RESET' }
+    | { type: 'GAME:START' }
     | { type: 'ROUND:SET_WINNER', id: number }
     | { type: 'ROUND:ADD_SCORE', value: number }
-    | { type: 'ROUND:SUBTRACT_SCORE', value: number };
+    | { type: 'ROUND:SUBTRACT_SCORE', value: number }
+    | { type: "ERROR_MESSAGE", message: string };
 
 export type Dispatch = (action: Action | ThunkAction) => any;
 export type GetState = () => State;

@@ -28,14 +28,23 @@ export const setupGame = (): ThunkAction =>
         dispatch(setStage(Stage["GAME_SETUP"]));
     };
 
-export const startGame = (): ThunkAction =>
-    (dispatch: Dispatch, getState: GetState): void => {
-        const { players } = getState();
+// export const startGame = (): ThunkAction =>
+//     (dispatch: Dispatch, getState: GetState): void => {
+//         const { players } = getState();
 
-        if (players.allIds.length >= 2) {
-            dispatch(setStage(Stage["GAME_ROUND"]));
-        }
-    };
+//         if (players.allIds.length >= 2) {
+//             dispatch(setStage(Stage["GAME_ROUND"]));
+//         }
+//     };
+
+export const startGame = (): Action => ({
+    type: "GAME:START"
+});
+
+export const errorMessage = (message: string): Action => ({
+    type: "ERROR_MESSAGE",
+    message
+});
 
 export const setStage = (stage: number): Action => ({
     type: 'GAME:SET_STAGE',

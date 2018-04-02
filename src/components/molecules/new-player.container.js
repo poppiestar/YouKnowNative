@@ -29,13 +29,7 @@ class NewPlayerContainer extends Component<Props, State> {
         text: ''
     };
 
-    constructor(props: Props): void {
-        super(props);
-
-        this.addPlayer = this.addPlayer.bind(this);
-    }
-
-    addPlayer(): void {
+    addPlayer = (): void => {
         const name = this.state.text;
 
         if (name !== '') {

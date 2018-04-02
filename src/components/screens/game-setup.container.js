@@ -2,14 +2,14 @@
 
 import { connect } from 'react-redux';
 
-import type { ThunkAction } from '@lib/types';
+import type { Action } from '@lib/types';
 
 import { startGame } from '@redux/actions';
 
 import GameSetupScreen from './game-setup.screen';
 
 type ConnectedDispatch = {
-    startGame: () => ThunkAction
+    startGame: () => Action
 };
 
 export type Props = ConnectedDispatch;
